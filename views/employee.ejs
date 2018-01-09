@@ -8,12 +8,32 @@
     <title></title>    
   </head>
   <body>
+    
     <div class="container">
-        <%= data %>
-        <% for(var i in data[0]){%>
-            <p><%= i %></p>
-            <p><%= data[0][i] %></p>
-        <% }%>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">N</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Должность</th>
+                    <th scope="col">Язык</th>
+                    <th scope="col">Дата приема</th>
+                    <th scope="col">Дата увольнения</th>
+                </tr>
+            </thead>
+            <tbody
+                <% for(var i = 0;i<data.length; i++){%>
+                    <tr>
+                        <th scope="row"><%= i+1 %></th>
+                        <td><%= data[i].name %></td>
+                        <td><%= data[i].position %></td>
+                        <td><%= data[i].language %></td>
+                        <td><%= data[i].from %></td>
+                        <td><%= data[i].to %></td>
+                    </tr>
+                <% }%>
+            </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
